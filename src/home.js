@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Songs</title>
-    <script src="main.js"></script>
-    <link rel="stylesheet" href="../src/style.css">
-</head>
-<body>
-    <div id="content">
+/*
         <div class="header">
             <div class="title">Daily Songs</div>
             <div class="options">
@@ -44,6 +33,22 @@
             <div class="developed">Developed by RodrigoAPassos</div>
             <div class="credits"><a href="https://unsplash.com/photos/PlUQQyIMO8U?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink">Background image by Jabber Visuals</a></div>
         </div>
-    </div>
-</body>
-</html>
+*/
+
+const homePage = () => {
+    const ctnt = document.getElementById("content");
+    //page header
+    const header = document.createElement("div");
+    header.classList.add("header");
+    //header title
+    const hTitle = document.createElement("div");
+    hTitle.classList.add("title");
+    hTitle.innerHTML = "Daily Songs";
+    //header options
+    const options = document.createElement("div");
+    options.classList.add("options");
+        //options buttons
+    const bHome = document.createElement("button");
+    bHome.classList.add("selected");
+    bHome.innerHTML = "Home";
+}
