@@ -48,6 +48,7 @@ body {
     font-weight: bold;
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
+    margin: 0 10px;
 }
 
 .selected {
