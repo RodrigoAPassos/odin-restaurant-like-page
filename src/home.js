@@ -20,12 +20,12 @@ function homePage () {
     const bMenu = document.createElement("button");
     bMenu.innerHTML = "Today's Menu";
     bMenu.setAttribute("id", "menu");
-    bMenu.setAttribute("onclick", "todayPage()");
+    bMenu.setAttribute("onclick", "clear('today')");
             //Recent
     const bRecent = document.createElement("button");
     bRecent.innerHTML = "Recent";
     bRecent.setAttribute("id", "recent");
-    bRecent.setAttribute("onclick", "recentPage()");
+    bRecent.setAttribute("onclick", "clear('recent')");
         //append options
     options.appendChild(bHome);
     options.appendChild(bMenu);

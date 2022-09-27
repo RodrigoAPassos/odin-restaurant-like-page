@@ -13,7 +13,7 @@ function todayPage () {
             //Home
     const bHome = document.createElement("button");
     bHome.setAttribute("id", "home");
-    bHome.setAttribute("onclick", "homePage()");
+    bHome.setAttribute("onclick", "clear('home')");
     bHome.innerHTML = "Home";
             //Today's Menu
     const bMenu = document.createElement("button");
@@ -25,7 +25,7 @@ function todayPage () {
     const bRecent = document.createElement("button");
     bRecent.innerHTML = "Recent";
     bRecent.setAttribute("id", "recent");
-    bRecent.setAttribute("onclick", "recentPage()");
+    bRecent.setAttribute("onclick", "clear('recent')");
         //append options
     options.appendChild(bHome);
     options.appendChild(bMenu);
@@ -69,3 +69,38 @@ function todayPage () {
 }
 
 export default todayPage;
+
+/*
+<div id="content">   
+    <div class="header">
+        <div class="title">Daily Songs</div>
+        <div class="options">
+            <button id="home" class="selected" disabled="true">Home</button>
+            <button id="menu" onclick="todayPage()">Today's Menu</button>
+            <button id="recent" onclick="recentPage()">Recent</button>
+        </div>
+        <div class="icon"><img src="../src/queue_music_white_36dp.svg" alt="site-icon"></div>
+    </div>
+    <div class="main">
+        <div class="bckg"></div>
+        <div class="info">
+            <div class="main-title">My Daily Songs</div>
+            <div class="text-intro">
+                <p>Daily Songs is a site where i can display my mood through a <span class="italic">too</span> little list of songs that i'm hearing each day (which could obviously change by the minute). It is also a tribute to all the artists that put our overhelmingly complicated moods and feelings in such amazing songs. THANK YOU!</p>
+            </div>
+            <div class="hours">
+                <h3 class="hours-title">Hours?</h3>
+                <div class="hours-text">As much as possible, please.</div>
+            </div>
+            <div class="location">
+                <h3 class="location-title">Location</h3>
+                <div class="location-text">Anywhere, in a loved headphone.</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="developed">Developed by RodrigoAPassos</div>
+        <div class="credits"><a href="https://unsplash.com/photos/PlUQQyIMO8U?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditShareLink">Background image by Jabber Visuals</a></div>
+    </div>
+</div>
+*/
