@@ -52,9 +52,11 @@ body {
     cursor: pointer;
 }
 
-.selected {
+.options button:disabled {
     background-color: grey;
     color: white;
+    transform: scale(1.2);
+    transform-origin: bottom;
 }
 
 .icon {

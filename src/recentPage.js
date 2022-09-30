@@ -1,4 +1,4 @@
-function todayPage () {
+function recentPage () {
     const content = document.getElementById("content");
     //page header
             //Home
@@ -6,10 +6,10 @@ function todayPage () {
     bHome.removeAttribute("disabled");
             //Today's Menu
     const bMenu = document.getElementById("today");
-    bMenu.setAttribute("disabled", "true");
+    bMenu.removeAttribute("disabled");
             //Recent
     const bRecent = document.getElementById("recent");
-    bRecent.removeAttribute("disabled");
+    bRecent.setAttribute("disabled", "true");
 
     //page main
     const main = document.createElement("div");
@@ -23,35 +23,25 @@ function todayPage () {
                 //main-title
     const mainTitle = document.createElement("div");
     mainTitle.classList.add("main-title");
-    mainTitle.innerHTML = "Today's Menu";
+    mainTitle.innerHTML = "Recent Songs";
                 //song list
     const songList = document.createElement("ol");
     songList.classList.add("song-list");
                     //list items
     const song1 = document.createElement("li");
-    song1.classList.add("song-container");
                         //1st song
-    const songNumber1 = document.createElement("h4");
-    songNumber1.innerHTML = "Ideologia";
-    const songNumber1Author = document.createElement("h5");
-    songNumber1Author.innerHTML = "Cazuza";
-                    //list item
-    const song2 = document.createElement("li");
-    song2.classList.add("song-container");
-                        //1st song
-    const songNumber2 = document.createElement("h4");
-    songNumber2.innerHTML = "Do the Evolution";
-    const songNumber2Author = document.createElement("h5");
-    songNumber2Author.innerHTML = "Pearl Jam";
+    const songContainer = document.createElement("div");
+    songContainer.classList.add("song-container");
+    const firstSong = document.createElement("h4");
+    firstSong.innerHTML = "Ideologia";
+    const firstSongAuthor = document.createElement("h5");
+    firstSongAuthor.innerHTML = "Cazuza";
 
     //main append
-    song1.appendChild(songNumber1);
-    song1.appendChild(songNumber1Author);
+    songContainer.appendChild(firstSong);
+    songContainer.appendChild(firstSongAuthor);
+    song1.appendChild(songContainer);
     songList.appendChild(song1);
-    song2.appendChild(songNumber2);
-    song2.appendChild(songNumber2Author);
-    songList.appendChild(song1);
-    songList.appendChild(song2);
     info.appendChild(mainTitle);
     info.appendChild(songList);
     main.appendChild(bckg);
@@ -82,4 +72,4 @@ function todayPage () {
     content.appendChild(footer);
 }
 
-export default todayPage;
+export default recentPage;

@@ -1,42 +1,35 @@
 import homePage from "../src/home";
 import todayPage from "../src/today-menu";
+import recentPage from "../src/recentPage";
 
-
+homePage(0);
 
 const clear = (page) => {
-    /*  const header = document.querySelector(".header");
-    const main = document.querySelector(".main");
-    const footer = document.querySelector(".footer");
 
-    document.getElementById("content").removeChild(header);
-    document.getElementById("content").removeChild(main);
-    document.getElementById("content").removeChild(footer);
-    */
     if (page == "home") {
-        homePage();
+        homePage(1);
     }else if (page == "today") {
-        const header = document.querySelector(".header");
+        todayPage();
+    }else if (page == "recent") {
+        recentPage();
+    }else return;
+};
+
+document.querySelectorAll(".btn").forEach((button) => {
+    button.addEventListener("click", () => {
+        //const header = document.querySelector(".header");
         const main = document.querySelector(".main");
         const footer = document.querySelector(".footer");
 
-        document.getElementById("content").removeChild(header);
+        //document.getElementById("content").removeChild(header);
         document.getElementById("content").removeChild(main);
         document.getElementById("content").removeChild(footer);
-        console.log("today");
-        todayPage();
-    }else /*if (page == "recent") {
-        recentPage();
-    }else*/ return;
-};
+        clear(button.id);
+    });
+})
 
-clear("home");
-const btnMenu = document.getElementById("menu");
-const btnHome = document.getElementById("home");
-const btnRecent = document.getElementById("recent");
 
-btnMenu.addEventListener("click", () => {clear("today")});
-btnHome.addEventListener("click", () => {clear("home")});
-btnRecent.addEventListener("click", () => {clear("recent")});
+
 /*
 <div class="header">
             <div class="title">Daily Songs</div>

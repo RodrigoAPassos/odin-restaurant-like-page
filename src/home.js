@@ -1,5 +1,7 @@
-function homePage () {
+function homePage (i) {
+
     const content = document.getElementById("content");
+    
     //page header
     const header = document.createElement("div");
     header.classList.add("header");
@@ -13,19 +15,19 @@ function homePage () {
             //Home
     const bHome = document.createElement("button");
     bHome.setAttribute("id", "home");
-    bHome.classList.add("selected");
+    bHome.classList.add("btn");
     bHome.setAttribute("disabled", "true");
     bHome.innerHTML = "Home";
             //Today's Menu
     const bMenu = document.createElement("button");
     bMenu.innerHTML = "Today's Menu";
-    bMenu.setAttribute("id", "menu");
-    //bMenu.setAttribute("onclick", "clear('today')");
+    bMenu.setAttribute("id", "today");
+    bMenu.classList.add("btn");
             //Recent
     const bRecent = document.createElement("button");
     bRecent.innerHTML = "Recent";
+    bRecent.classList.add("btn");
     bRecent.setAttribute("id", "recent");
-    //bRecent.setAttribute("onclick", "clear('recent')");
         //append options
     options.appendChild(bHome);
     options.appendChild(bMenu);
@@ -43,6 +45,7 @@ function homePage () {
     header.appendChild(hTitle);
     header.appendChild(options);
     header.appendChild(icon);
+    
     //page main
     const main = document.createElement("div");
     main.classList.add("main");
@@ -119,11 +122,24 @@ function homePage () {
     //append footer
     footer.appendChild(dev);
     footer.appendChild(credits);
-
-    //append content
-    content.appendChild(header);
-    content.appendChild(main);
-    content.appendChild(footer);
+    
+    //append and update content
+    if (i==0) {
+        content.appendChild(header);
+        content.appendChild(main);
+        content.appendChild(footer);
+    }else {
+        //update buttons
+        const upHome = document.getElementById("home");
+        upHome.setAttribute("disabled", "true");
+        const upTodayButton = document.getElementById("today");
+        upTodayButton.removeAttribute("disabled");
+        const upRecent = document.getElementById("recent");
+        upRecent.removeAttribute("disabled");
+        //append
+        content.appendChild(main);
+        content.appendChild(footer);
+    }
 }
 //homePage();
 export default homePage;
