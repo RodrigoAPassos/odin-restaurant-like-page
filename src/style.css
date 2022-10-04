@@ -110,6 +110,18 @@ body {
     box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.75);
 }
 
+.song-list li a {
+    text-decoration: none;
+    color: black;
+}
+
+.song-list li:hover {
+    transform: scale(1.1);
+    transform-origin: left;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 1);
+}
+
 .song-list h4 {
     margin-bottom: 0;
 }
