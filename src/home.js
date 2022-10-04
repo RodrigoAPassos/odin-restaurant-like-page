@@ -58,6 +58,9 @@ function homePage (i) {
             //main-title
     const mainTitle = document.createElement("div");
     mainTitle.classList.add("main-title");
+    const mainImg = document.createElement("img");
+    mainImg.setAttribute("src", "../src/replay_FILL0_wght400_GRAD0_opsz48.svg");
+    mainImg.setAttribute("alt", "home logo, replay image");
     mainTitle.innerHTML = "My Daily Songs";
             //text-intro
     const textIntro = document.createElement("div");
@@ -96,6 +99,7 @@ function homePage (i) {
     location.appendChild(locationTitle);
     location.appendChild(locationText);
         //append info
+    mainTitle.appendChild(mainImg);
     info.appendChild(mainTitle);
     info.appendChild(textIntro);
     info.appendChild(hours);
